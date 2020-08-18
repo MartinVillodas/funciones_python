@@ -19,7 +19,7 @@ import random
 
 
 def imprimir_nombre(nombre, apellido):
-    pass
+    print(nombre, apellido)
     # En este lugar debe colocar el "print" e imprimir
     # en pantalla el nombre y apellido que vienen por parámetro
     # print(.....)
@@ -29,7 +29,23 @@ def promedio(numeros):
     # Alumno:
     # 1) calcule el promedio
     # 2) use "return" para retornar ese valor
-    pass  # Cuando termine de implementar está función borrar "pass"
+    promedio = sum(numeros) / len(numeros)
+    return promedio
+
+def ordenar(numeros):
+    ordenado = sorted(numeros)
+    return ordenado
+
+def lista_aleatoria(inicio, fin, cantidad):
+
+    lista = []
+
+    for i in range(cantidad):
+        numero = random.randrange(inicio, fin+1)
+        lista.append(numero)
+
+    return lista
+
 
 
 def ej1():
@@ -39,7 +55,7 @@ def ej1():
     # Esa función ya se encuentra a medio armar al principio de este archivo.
     # Debe cumpletar la función para que se imprima en pantalla su nombre y apellido
     # Debe invocar a la función como:
-    imprimir_nombre('mi_nombre', 'mi_apellido')
+    imprimir_nombre('Martin', 'Villodas')
 
     # Reemplazar por su nombre y apellido los textos
 
@@ -80,11 +96,13 @@ def ej2():
     # promedio_re
 
     # Luego imprimir en pantalla el valor resultante, tal que:
+    
+    print("El promedio de los numeros es {}".format(promedio(numeros)))
 
 
 def ej3():
     # Ejercicios de listas y métodos
-    numeros = [2, 4, 6, 8, 10, 12]
+    numeros = [5, 4, 3, 14, 6, 12]
 
     '''
     Generar una una nueva funcion que se llame "ordenar",
@@ -96,6 +114,9 @@ def ej3():
     similar, la debe crear y escribir abajo de ella.
 
     '''
+    lista_ordenada = ordenar(numeros)
+
+    print("La lista de numeros ordenadas queda\n", lista_ordenada)
 
     # Luego de crear la función invocarla en este lugar:
     # lista_ordenada = ordenar(numeros)
@@ -140,6 +161,8 @@ def ej4():
     # mi_lista_aleatorio = lista_aleatoria(inicio, fin, cantidad)
     # print(mi_lista_aleatorio)
 
+    mi_lista_aleatorio = lista_aleatoria(inicio, fin, cantidad)
+    print("Mi lista aleatoria es \n", mi_lista_aleatorio)
 
 def ej5():
     # Ejercicios de listas y métodos
@@ -166,8 +189,8 @@ def ej5():
 
 if __name__ == '__main__':
     print("Bienvenidos a otra clase de Inove con Python")
-    ej1()
+    # ej1()
     # ej2()
     # ej3()
     # ej4()
-    # ej5()
+    ej5()
