@@ -15,6 +15,7 @@ __author__ = "Inove Coding School"
 __email__ = "alumnos@inove.com.ar"
 __version__ = "1.3"
 
+import funciones as fun
 
 def ej1():
     print('Comencemos a crear lo nuestro!')
@@ -54,6 +55,10 @@ def ej2():
     de números generados.
     Imprimir en pantalla la lista ordenada
     '''
+    tiro_dados = fun.lista_aleatoria(1, 6, 5)
+    print("Los resultados de tirar los dados 5 veces fueron:", tiro_dados)
+    print("Con los numeros ordenados seria:", fun.ordenar(tiro_dados))
+
 
 
 def ej3():
@@ -87,7 +92,17 @@ def ej3():
     vistos en clase para ver como se implementa max con esa key
 
     '''
+    tiro_dados = fun.lista_aleatoria(1 , 6, 5)
+    print("Los resultados de tirar los dados 5 veces fueron:", tiro_dados)
+    print("El numero 1 aparece {} veces".format(fun.contar(tiro_dados, 1)))
+    print("El numero 2 aparece {} veces".format(fun.contar(tiro_dados, 2)))
+    print("El numero 3 aparece {} veces".format(fun.contar(tiro_dados, 3)))
+    print("El numero 4 aparece {} veces".format(fun.contar(tiro_dados, 4)))
+    print("El numero 5 aparece {} veces".format(fun.contar(tiro_dados, 5)))
+    print("El numero 6 aparece {} veces".format(fun.contar(tiro_dados, 6)))
 
+    mas_repetido = max(tiro_dados, key=tiro_dados.count)
+    print("El numero que mas veces se repitio fue:", mas_repetido)
 
 def ej4():
     print("Ahora sí! buena suerte :)")
@@ -148,7 +163,7 @@ def ej4():
 
 if __name__ == '__main__':
     print("Ejercicios de práctica")
-    # ej1()
-    # ej2()
-    # ej3()
+    ej1()
+    ej2()
+    ej3()
     # ej4()
