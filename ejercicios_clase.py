@@ -46,6 +46,9 @@ def lista_aleatoria(inicio, fin, cantidad):
 
     return lista
 
+def contar(valores, numero):
+    cantidad_veces = valores.count(numero)
+    return cantidad_veces
 
 
 def ej1():
@@ -180,6 +183,12 @@ def ej5():
     "count"
 
     '''
+    lista_numeros = lista_aleatoria(1, 9, cantidad_numeros)
+
+    cantidad_tres = contar(lista_numeros, 3)
+
+    print("La lista de numeros es:", lista_numeros)
+    print("La cantidad de veces que sale el numero 3 es:", cantidad_tres)
 
     # Por ejemplo creo una lista de 5 elemtnos
     # lista_numeros = lista_aleatoria(...,...,cantidad_numeros)
@@ -189,8 +198,8 @@ def ej5():
 
 if __name__ == '__main__':
     print("Bienvenidos a otra clase de Inove con Python")
-    # ej1()
-    # ej2()
-    # ej3()
-    # ej4()
+    ej1()
+    ej2()
+    ej3()
+    ej4()
     ej5()
