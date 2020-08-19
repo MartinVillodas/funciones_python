@@ -105,7 +105,8 @@ def ej3():
     print("El numero que mas veces se repitio fue:", mas_repetido)
 
 def ej4():
-    print("Ahora sí! buena suerte :)")
+    print("Juguemos a la Generala")
+    print("\n")
 
     '''
     Este ejercicio representa ya un problema que forma parte de un juego
@@ -159,19 +160,22 @@ def ej4():
     guardados" tenga "generala", es decir, 5 números iguales.
 
     '''
-    while True:
+    for h in range(1):
 
         print("Escriba `lanzar´ en el teclado para tirar los dados")
         inicio = str(input())
+        print("\n")
 
         if inicio == "lanzar": #Genero 5 lanzamientos de dados aleatorios y los imprimo
             dados_lanzados = fun.lista_aleatoria(1, 6, 5)
             print("Tus dados salieron con los siguientes numeros:", dados_lanzados)
+            print("\n")
         
             #Analizo cual es el numero que mas se repitio
             repetido = max(dados_lanzados, key= dados_lanzados.count) #Esto me dice el numero mas repetido
             cantidad_repetido = fun.contar(dados_lanzados, repetido) #Esto me dice cuantas veces sale el numero mas repetido
             print("El numero mas repetido es {} y sale {} veces".format(repetido, cantidad_repetido))
+            print("\n")
 
 
             #Creo una lista vacia donde se guardaran los dados repetidos segun la cantidad de veces que salen
@@ -179,33 +183,45 @@ def ej4():
             for i in range(cantidad_repetido):
                 dados_guardados.append(repetido)
             print("La nueva lista con los dados repetidos es:", dados_guardados)
+            print("\n")
 
 
             #Vuelvo a tirar los dados o paro el juego, segun len(datos_guardados) > 1
             #Si se tiran los dados, se hace sin los dados repetidos
             
             if len(dados_guardados) > 1:
-                while len(dados_guardados) > 1:
-                                        
+                repetido_2 = None
+
+                while True:
                     inicio_2 = str(input("Lance los dados nuevamente con la palabra `lanzar´:\n"))
                     if inicio_2 == "lanzar":
                         dados_lanzados_2 = fun.lista_aleatoria(1, 6, len(dados_lanzados)- len(dados_guardados))
+                        print("\n")
                         print("Los dados lanzados son:", dados_lanzados_2)
+                        print("\n")
 
                         #Verifico si uno de los dados lanzados por segunda vez es igual a los dados guardados
-                        for i in range(len(dados_lanzados_2)):
+                        for i in range(1):
                             if len(dados_guardados) < 5:
                                 repetido_2 = fun.contar(dados_lanzados_2, dados_guardados[0])
                                 for n in range(repetido_2):
                                     dados_guardados.append(dados_guardados[0])
-
-                            elif len(dados_guardados) == 5:
+                                    print("Tus dados guardados son:", dados_guardados)
+                                    print("\n")
+                                if repetido_2 == 0:
+                                    print("No hubo coincidencia")
+                                    break
+                        for i in range(1):
+                            if len(dados_guardados) == 5:
                                 print("Felicitaciones, has hecho una generala")
                                 break
-                            else: #Si no hay coincidencia entre los dados lanzados nuevamente y los dados guardados, se rompa el bucle
-                                break
+                        if repetido_2 == 0:
+                            break
+                        if len(dados_guardados) == 5:
+                            break
+
                     else:
-                        print("Ingrese `lanzar´ para continuar")
+                        break
             else:
                 print("Lo siento, no te ha tocado ningun numero igual")
                 break
@@ -222,9 +238,9 @@ def ej4():
 
 if __name__ == '__main__':
     print("Ejercicios de práctica")
-    ej1()
-    ej2()
-    ej3()
+    #ej1()
+    #ej2()
+    #ej3()
     ej4()
 
     #while True:
