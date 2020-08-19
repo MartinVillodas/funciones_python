@@ -105,6 +105,7 @@ def ej3():
     print("El numero que mas veces se repitio fue:", mas_repetido)
 
 def ej4():
+    print("\n")
     print("Juguemos a la Generala")
     print("\n")
 
@@ -190,8 +191,7 @@ def ej4():
             #Si se tiran los dados, se hace sin los dados repetidos
             
             if len(dados_guardados) > 1:
-                repetido_2 = None
-
+                
                 while True:
                     inicio_2 = str(input("Lance los dados nuevamente con la palabra `lanzar´:\n"))
                     if inicio_2 == "lanzar":
